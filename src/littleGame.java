@@ -4,7 +4,7 @@
        
        
         isTooYoung(19);
-        int score = finalScoreCalculator(true, 6, 870, 8);
+        int score = finalScoreCalculator(true, 6, 90, 8);
         int highScorePosition = calculateHighScorePosition(score);
         displayHighScorePosition("Nadia", highScorePosition);
      
@@ -39,15 +39,16 @@
 
 
     public static int calculateHighScorePosition(int score) {
-        
+
+        int position = 4; // Default position
         if (score >= 1000) {
-            return 1;
-        } else if (score >= 500 && score < 1000) {
-            return 2;
-        } else if (score >= 100 && score < 500) {
-            return 3;
+            position = 1;
+        } else if (score >= 500) { 
+            position = 2;
+        } else if (score >= 100) { 
+            position = 3;
         }
-        return 4;
+        return position;
     }
 
 }
