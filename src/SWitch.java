@@ -8,7 +8,7 @@ public class SWitch {
 //         } else  {
 //             System.out.println("Value neither 1 nor 2");
 // }
-        String month = "April";
+        String month = "april";
         System.out.println(getQuarter(month));
         int switchValue = 7;
         switch(switchValue){
@@ -21,12 +21,16 @@ public class SWitch {
 
     public static String getQuarter(String month) { // return comes before switch
         return switch (month) {
-            case "January", "Feburary", "March" -> "First";
+            case "January", "Feburary", "March" -> {yield "First";}
             case "April", "May", "June" -> "Second";
             case "July", "August", "September" -> "Third";
             case "October", " November", "December" -> "Fourth";
         
-            default -> "Bad Request";
+            //default -> "Bad Request";
+            default -> {
+                String badResponse = month + " is bad.";
+                yield badResponse;
+            }
         };
 
     }
