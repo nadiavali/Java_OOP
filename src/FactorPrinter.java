@@ -1,6 +1,6 @@
 public class FactorPrinter{
     public static void main(String[] args){
-        printFactors(32);
+        printFactors(24);
 
     }
     public static void printFactors(int number){
