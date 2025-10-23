@@ -2,24 +2,24 @@ package Bank.nadia.java;
 
 public class Bank {
 
-    private int accountNumber;
-    private int accoutBalance;
+    private double accountNumber;
+    private double accoutBalance;
     private String customerName;
     private String email;
     private String phoneNumber;
 
-    public void depositingFund(int deposit) {
+    public void depositingFund(double deposit) {
         accoutBalance += deposit;
-        System.out.println("Deposit of : " + deposit + " Make the balance of: " + accoutBalance);
+        System.out.println("Deposit of: $" + deposit + " New Balance is: $" + accoutBalance);
     }
-    public void withdrawingFund(int withdraw) {
+    public void withdrawingFund(double withdraw) {
         if (accoutBalance - withdraw < 0) System.out.println("This is not allowed, insufficient Funds!!");
-        else System.out.println("You have now " + (accoutBalance -= withdraw));
+        else System.out.println("withdrawal of: $" + withdraw + " Remaining balance of: $" + (accoutBalance -= withdraw));
     }
-    public int getAccountNumber() {
+    public double getAccountNumber() {
         return accountNumber;
     }
-    public int getAccoutBalance() {
+    public double getAccoutBalance() {
         return accoutBalance;
     }
     public String getCustomerName() {
