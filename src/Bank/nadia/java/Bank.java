@@ -5,8 +5,31 @@ public class Bank {
     private double accountNumber;
     private double accoutBalance;
     private String customerName;
-    private String email;
+    private String customerEmail;
     private String phoneNumber;
+
+    public Bank(){
+        // calling a constructor within another one (constructor chaining)
+        // the very first line should be """THISSSSSS""""
+        this(1234, 88899299399949994.99, "Nadia", "Default email", "default phone");
+        System.out.println("constructor with This is called");
+    }
+
+    public Bank(double accountNumber, double accoutBalance, String customerName, String email, String phone){
+        System.out.println("Bank constructor with parameters called");
+        this.accountNumber = accountNumber;
+        //setAccountNumber(accountNumber);
+        this.accoutBalance = accoutBalance;
+        this.customerName = customerName;
+        customerEmail = email;
+        phoneNumber = phone;
+    }
+
+    
+    public Bank(String Email, String phone) {
+        this(1111.2, 2222.2," Name" ,Email, phone);
+        
+    }
 
     public void depositingFund(double deposit) {
         accoutBalance += deposit;
@@ -26,22 +49,22 @@ public class Bank {
         return customerName;
     }
     public String getEmail() {
-        return email;
+        return customerEmail;
     }
     public String getPhoneNumber() {
         return phoneNumber;
     }
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(double accountNumber) {
         this.accountNumber = accountNumber;
     }
-    public void setAccoutBalance(int accoutBalance) {
+    public void setAccoutBalance(double accoutBalance) {
         this.accoutBalance = accoutBalance;
     }
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
     public void setEmail(String email) {
-        this.email = email;
+        this.customerEmail = email;
     }
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
