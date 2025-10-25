@@ -8,6 +8,12 @@ public class Bank {
     private String customerEmail;
     private String phoneNumber;
 
+    @Override
+    public String toString() {
+        return "Bank [accountNumber=" + accountNumber + ", accoutBalance=" + accoutBalance + ", customerName="
+                + customerName + ", customerEmail=" + customerEmail + ", phoneNumber=" + phoneNumber + "]";
+    }
+
     public Bank(){
         // calling a constructor within another one (constructor chaining)
         // the very first line should be """THISSSSSS""""
