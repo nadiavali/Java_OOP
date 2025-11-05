@@ -12,19 +12,30 @@ public class Meal {
     }
 
   public Meal(String burgerType, String drinkType, String sideType) {
-    this.burger = new Burger(burgerType, 4.0);
+    if (burgerType.equalsIgnoreCase("deluxe")) {
+        this.burger = new DeluxeBurger(burgerType, 8.5);
+    }else{  this.burger = new Burger(burgerType, 4.0);
+    }
+  
     this.drink = new Item(drinkType, "drink", 1.0);
     this.side = new Item(sideType, "side", 1.50);
   }  
 
   public double getTotalPrice() {
-    return side.getAdjustedPrice() + drink.getAdjustedPrice() + burger.getAdjustedPrice();
+    if (burger instanceof DeluxeBurger) {
+        return burger.getAdjustedPrice();
+    }else{
+    return side.getAdjustedPrice() + drink.getAdjustedPrice() + burger.getAdjustedPrice();}
   }
 
   public void printItemizedList() {
     burger.printItem();
+    if (burger instanceof DeluxeBurger) {
+        Item.printItem(drink.getName(), 0);
+        Item.printItem(side.getName(), 0);
+    }else {
     drink.printItem();
-    side.printItem();
+    side.printItem();}
     System.out.println("-".repeat(30));
     Item.printItem("Total Price", getTotalPrice());
 
@@ -32,6 +43,13 @@ public class Meal {
 
   public void addBurgerToppings(String extra1, String extra2, String extra3) {
     burger.addedTopping(extra1, extra2, extra3);
+  }
+
+  public void addBurgerToppings(String extra1, String extra2, String extra3, String extra4, String extra5) {
+    if (burger instanceof DeluxeBurger db) {
+        db.addedTopping(extra1, extra2, extra3, extra4, extra5);
+    }else {
+    burger.addedTopping(extra1, extra2, extra3);}
   }
 
   public void setDrinkSize(String size) {

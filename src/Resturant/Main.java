@@ -21,10 +21,11 @@ public class Main {
         // regularMeal.printItemizedList();
 
 
-        Meal meal = new Meal("Turkey", "7-up", "Chili");
-        meal.addBurgerToppings("ham", "Cheese", "Tomatoes");
-        meal.setDrinkSize("SMALL");
-        meal.printItemizedList();
+        //Meal meal = new Meal("Turkey", "7-up", "Chili");
+        Meal deluxe = new Meal("deluxe", "7-up", "Chili");
+        deluxe.addBurgerToppings("ham", "Cheese", "Tomatoes", "avacado", "ham");
+        deluxe.setDrinkSize("LARGE");
+        deluxe.printItemizedList();
     }
 
 
