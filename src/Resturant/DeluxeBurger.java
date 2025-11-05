@@ -25,9 +25,6 @@ public class DeluxeBurger extends Burger{
         
         return 0;
     }
-   
-
-    
     
 
 }
