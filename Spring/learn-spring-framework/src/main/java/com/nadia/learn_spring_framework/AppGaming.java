@@ -13,6 +13,12 @@ public class AppGaming {
         game = new SuperContraGame();
         runner = new GameRunner(game);
         runner.run();
+
+
+        System.out.println("....".repeat(30));
+        game = new PacMan();
+        runner = new GameRunner(game);
+        runner.run();
     }
 }
     
