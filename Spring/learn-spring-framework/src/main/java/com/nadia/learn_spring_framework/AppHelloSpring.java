@@ -17,7 +17,12 @@ public class AppHelloSpring {
         System.out.println(context.getBean("name"));
         System.out.println(context.getBean("age"));
         System.out.println(context.getBean("person"));
-        System.out.println(context.getBean("address"));
+        System.out.println(context.getBean("address1"));
+        //retrieve by type
+        //System.out.println(context.getBean(Address.class));
+        //System.out.println(context.getBean(Person2.class));
+        //System.out.println(context.getBean("Person3MethodCall"));
+        System.out.println(context.getBean("person4Parameters"));
 
     }
 }
