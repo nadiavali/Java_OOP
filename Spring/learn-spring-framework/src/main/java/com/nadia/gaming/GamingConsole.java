@@ -1,4 +1,4 @@
-package com.nadia.learn_spring_framework;
+package com.nadia.gaming;
 
 public interface GamingConsole {
 
