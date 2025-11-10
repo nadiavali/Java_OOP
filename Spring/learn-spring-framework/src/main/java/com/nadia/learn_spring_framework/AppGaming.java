@@ -17,7 +17,7 @@ public class AppGaming {
 
         System.out.println("....".repeat(30));
         game = new PacMan();
-        runner = new GameRunner(game);
+        runner = new GameRunner(game); //obj creation + wiring of dependencies /Game is the dependency of GameRunner// game is injected into GameRunner
         runner.run();
     }
 }
