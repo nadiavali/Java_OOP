@@ -1,13 +1,12 @@
-package com.nadia.gamingSpring;
+package com.nadia.gamingSpringLuncher;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-
-import com.nadia.gaming.MarioGame;
 import com.nadia.gaming.GameRunner;
+import com.nadia.gaming.MarioGame;
 
 @Configuration
 @ComponentScan("com.nadia.gaming")

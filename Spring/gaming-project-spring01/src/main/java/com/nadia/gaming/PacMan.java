@@ -1,8 +1,10 @@
 package com.nadia.gaming;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier
 public class PacMan implements GamingConsole {
     public void up() {
         System.out.println("PacMan goes UP");
