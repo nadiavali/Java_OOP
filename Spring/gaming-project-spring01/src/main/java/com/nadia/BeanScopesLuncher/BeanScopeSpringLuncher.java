@@ -10,6 +10,10 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 
 import java.util.Arrays;
 
+// Singleton scope - default scope
+// same instance every time
+// no need to specify @Scope annotation for singleton scope
+// using it here for demonstration
 
 @Component
 class NormalClass {
@@ -17,6 +21,16 @@ class NormalClass {
       
     }
 }
+
+// Prototype scope - new instance every time
+// Possible scopes: singleton, prototype, request, session, application
+// request, session, application scopes are used in web applications
+// request - one instance per HTTP request
+// session - one instance per HTTP session
+// application - one instance per ServletContext
+// To use request, session, application scopes, we need to use @Scope with WebApplicationContext constants
+// e.g. @Scope(value=WebApplicationContext.SCOPE_REQUEST)
+// here we are using prototype scope for demonstration
 @Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Component
 class PrototypeClass {
