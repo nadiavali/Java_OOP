@@ -1,5 +1,7 @@
 package com.nadia.BusinessCalculationService;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,6 +17,8 @@ public class AppSpringLuncher {
         System.out.println("Business Calculation Service - Spring");
         var context = new AnnotationConfigApplicationContext(AppSpringLuncher.class);
         System.out.println(context.getBean(BusinessCalculationService.class).findMaximum());
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+        context.close();
     };
 
     

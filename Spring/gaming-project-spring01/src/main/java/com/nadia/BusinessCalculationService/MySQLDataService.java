@@ -1,9 +1,11 @@
 package com.nadia.BusinessCalculationService;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+//@Component
+@Repository
 @Qualifier("mySQLDataService")
 public class MySQLDataService implements DataService {
     public int[] retrieveData() {
