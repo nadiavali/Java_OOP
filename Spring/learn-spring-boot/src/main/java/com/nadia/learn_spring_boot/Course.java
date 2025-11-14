@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+// thanks to <dependency>
+			//<groupId>org.springframework.boot</groupId>
+			//<artifactId>spring-boot-starter-test</artifactId>. we can now modify withous restarting the server
+            // but changes in pom.xml still require restart
 public class Course {
     private long id;
     private String name;
@@ -53,7 +58,8 @@ class CourseControler {
         Arrays.asList(
             new Course(1, "Learn AWS", "Nadia"),
             new Course(2, "Learn Azure", "Nadia"),
-            new Course(3, "Learn GCP", "Nadia")
+            new Course(3, "Learn GCP", "Nadia"),
+            new Course(4, "Learn DevOps", "Nadia")
         ));
 
     @GetMapping("/")          // <-- hit http://localhost:8080/
