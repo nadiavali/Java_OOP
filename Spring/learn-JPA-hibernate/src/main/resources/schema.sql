@@ -6,3 +6,4 @@ create table Course(
     primary key (id)
 
 );
+
