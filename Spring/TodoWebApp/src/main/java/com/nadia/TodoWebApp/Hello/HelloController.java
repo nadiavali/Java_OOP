@@ -12,20 +12,32 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
-    @RequestMapping("say-hello")
-    // @ResponseBody makes all controller methods return data directly in the HTTP response
-    // instead of trying to render a view template
-    // return the string as is
-    @ResponseBody 
-    public String SayHello() {
-        return "HI, What you wanna learn now?";
-    }
+    // @RequestMapping("say-hello")
+    // // @ResponseBody makes all controller methods return data directly in the HTTP response
+    // // instead of trying to render a view template
+    // // return the string as is
+    // @ResponseBody 
+    // public String SayHello() {
+    //     return "HI, What you wanna learn now?";
+    // }
 
 
-    @GetMapping("hello")
-    public String HelloHTML() {
-      return "hello";
+    // @GetMapping("hello")
+    // public String HelloHTML() {
+    //   return "hello";
+    // }
+
+    // JSP Java server page
+    // "hello-jsp" --->sayHello.jsp
+
+
+
+    @GetMapping("hello-jsp")
+    public String helloJsp() {
+      return "sayHello";
     }
+
+  
 }
 
 
