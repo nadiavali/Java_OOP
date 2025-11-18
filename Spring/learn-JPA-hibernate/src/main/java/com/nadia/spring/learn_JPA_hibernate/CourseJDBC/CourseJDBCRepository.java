@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.nadia.spring.learn_JPA_hibernate.Course.Course;
+
 
 @Repository
 public class CourseJDBCRepository {
@@ -14,10 +16,17 @@ public class CourseJDBCRepository {
     private static String INSERT_QUERY =
             """
             insert into Course (id, name, author)
-            values(1, 'Learn AWS JPA Hibernate', 'Nadia');
+            values(?, ?, ?);
             """;
-
-    public void insert() {
-        jdbcTemplate.update(INSERT_QUERY);
+     private static String DELETE_QUERY = """
+                delete from Course
+                where id = ?;       
+                """;
+    public void insert(Course course) {
+        jdbcTemplate.update(INSERT_QUERY, course.getId(), course.getName(), course.getAuthor());
+    }
+    public void deleteById(int id) {
+        jdbcTemplate.update(DELETE_QUERY, id);
+       
     }
 }
