@@ -1,5 +1,5 @@
 
-package com.nadia.spring.learn_JPA_hibernate.CourseJDBC;
+package com.nadia.spring.learn_JPA_hibernate.Course.JDBC;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

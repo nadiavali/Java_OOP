@@ -1,4 +1,4 @@
-package com.nadia.spring.learn_JPA_hibernate.CourseJDBC;
+package com.nadia.spring.learn_JPA_hibernate.Course.JDBC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

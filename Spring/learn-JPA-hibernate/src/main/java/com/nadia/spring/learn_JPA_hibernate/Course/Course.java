@@ -1,8 +1,18 @@
 package com.nadia.spring.learn_JPA_hibernate.Course;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity(name ="Course_Details")
 public class Course {
+
+    @Id
     private int id;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name="author")
     private String author;  
 
     public Course() {
