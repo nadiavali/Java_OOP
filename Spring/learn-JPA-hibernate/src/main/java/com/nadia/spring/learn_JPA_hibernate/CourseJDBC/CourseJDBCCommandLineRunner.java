@@ -18,6 +18,8 @@ public class CourseJDBCCommandLineRunner implements CommandLineRunner {
         repository.insert(new Course(2, "Learn Azure JPA Hibernate 2025", "Nadia"));
         repository.insert(new Course(3, "Learn GCP JPA Hibernate 2025", "Nadia"));
         repository.deleteById(2);
+        System.out.println(repository.findById(1));
+    
     }
 
  
