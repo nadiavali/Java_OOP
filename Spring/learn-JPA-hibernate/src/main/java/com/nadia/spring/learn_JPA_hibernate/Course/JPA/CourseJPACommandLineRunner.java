@@ -1,12 +1,12 @@
-package com.nadia.spring.learn_JPA_hibernate.Course;
+package com.nadia.spring.learn_JPA_hibernate.Course.JPA;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.nadia.spring.learn_JPA_hibernate.Course.JPA.CourseJPARepository;
+import com.nadia.spring.learn_JPA_hibernate.Course.Course;
 
-@Component
+//@Component // deactive
 public class CourseJPACommandLineRunner implements CommandLineRunner{
 
     @Autowired
@@ -18,7 +18,7 @@ public class CourseJPACommandLineRunner implements CommandLineRunner{
         jpaRepository.insert(new Course(1, "Learn AWS JPA Hibernate 2026", "Nadia"));
         jpaRepository.insert(new Course(2, "Learn Azure JPA Hibernate 2026", "Nadia"));
         jpaRepository.insert(new Course(3, "Learn GCP JPA Hibernate 2026", "Nadia"));
-        jpaRepository.deleteById(2);
+        jpaRepository.deleteById(3);
         System.out.println(jpaRepository.findById(1));
     
     }

@@ -3,7 +3,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-@Entity(name ="Course_Details")
+
+///(name ="Course_Data") or whatever name by default is the namae of table(class)
+@Entity
 public class Course {
 
     @Id

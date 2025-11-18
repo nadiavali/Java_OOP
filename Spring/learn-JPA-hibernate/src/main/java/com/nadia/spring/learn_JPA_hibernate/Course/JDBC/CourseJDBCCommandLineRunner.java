@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.nadia.spring.learn_JPA_hibernate.Course.Course;
 
-@Component
+//@Component deactivating in order to avoid data errors
 public class CourseJDBCCommandLineRunner implements CommandLineRunner {
 
     @Autowired
