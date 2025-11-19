@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <h1>Loging Page</h1>
-    <p>Wellcome to login Page ${name} !!!</p>
- 
-</head>
-<body>
-   
-</body>
-</html>
+
+
+<h1>Please Login:</h1>
+<form action="login" method="post">
+    <pre>${error}</pre>
+   Name: <input type="text" name="name">
+   Password <input type="password" name="password">
+   <input type="submit" value="Login">
+</form>
+
+
