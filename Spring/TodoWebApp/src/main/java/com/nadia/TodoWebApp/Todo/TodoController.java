@@ -30,15 +30,23 @@ public class TodoController {
     }
 
     @RequestMapping(value = "add-todo", method = RequestMethod.GET)
-    public String showAddTodo() {
+    public String showAddTodo(ModelMap model) {
+        String username= (String)model.get("name");
+        Todo todo = new Todo(5, username, "learn", LocalDate.now(), false);
+        model.put("todo", todo);
         return "addTodo";
     }
-    //“Hey Spring, please give me whatever the user typed into the input field named description@RequestParam
-     @RequestMapping(value = "add-todo", method = RequestMethod.POST)
-    public String addNewTodo(@RequestParam String desc , ModelMap model) {
-        String username= (String)model.get("name");
-        todoService.addToDo(username, desc, LocalDate.now().plusYears(1), false);
-        return "redirect:list-todos";
-    }
-
+    // //“Hey Spring, please give me whatever the user typed into the input field named description@RequestParam
+    //  @RequestMapping(value = "add-todo", method = RequestMethod.POST)
+    // public String addNewTodo(@RequestParam String desc , ModelMap model) {
+    //     String username= (String)model.get("name");
+    //     todoService.addToDo(username, desc, LocalDate.now().plusYears(1), false);
+    //     return "redirect:list-todos";
+    // }
+    @RequestMapping(value = "add-todo", method = RequestMethod.POST)
+    public String addNewTodo(ModelMap model, Todo todo) {
+         String username= (String)model.get("name");
+         todoService.addToDo(username, todo.getDesc(), LocalDate.now().plusYears(1), false);
+         return "redirect:list-todos";
+        }
 }
