@@ -8,16 +8,16 @@ import java.time.LocalDate;
 public class Todo {
     private int id;
     private String username;
-    private String decription;
+    private String desc;
     private LocalDate targetDate;
     private boolean done;
 
 
-    public Todo(int id, String username, String decription, LocalDate targetDate, boolean done) {
+    public Todo(int id, String username, String desc, LocalDate targetDate, boolean done) {
         super();
         this.id = id;
         this.username = username;
-        this.decription = decription;
+        this.desc = desc;
         this.targetDate = targetDate;
         this.done = done;
     }
@@ -43,13 +43,13 @@ public class Todo {
     }
 
 
-    public String getDecription() {
-        return decription;
+    public String getDesc() {
+        return desc;
     }
 
 
-    public void setDecription(String decription) {
-        this.decription = decription;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
 
@@ -75,7 +75,7 @@ public class Todo {
 
     @Override
     public String toString() {
-        return "Todo [id=" + id + ", username=" + username + ", decription=" + decription + ", targetDate=" + targetDate
+        return "Todo [id=" + id + ", username=" + username + ", dec=" + desc + ", targetDate=" + targetDate
                 + ", done=" + done + "]";
     }
     
