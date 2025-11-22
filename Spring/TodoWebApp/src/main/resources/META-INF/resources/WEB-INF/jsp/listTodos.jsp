@@ -3,48 +3,23 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>List Todos Page:</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 30px;
-        }
-        h1 {
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #fafafa;
-        }
-    </style>
+    <title>List Todos Page</title>
+
+    <!-- Bootstrap CSS from WebJars -->
+    <link rel="stylesheet"
+          href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css" />
 </head>
-<body>
+<body class="container mt-4">
 
-    <h1>Welcome to your Todo list page; ${name}!</h1>
+    <h1 class="mb-4">Your Todos</h1>
 
-    <div>
-        Your TODOs are:
-    </div>
-
-    <table>
-        <thead>
+    <table class="table table-striped table-bordered">
+        <thead class="table-light">
             <tr>
-                <th>ID</th>
+                <th>Id</th>
                 <th>Description</th>
                 <th>Target Date</th>
-                <th>Is done ?</th>
+                <th>Done?</th>
             </tr>
         </thead>
         <tbody>
@@ -59,5 +34,8 @@
         </tbody>
     </table>
 
+    <!-- jQuery + Bootstrap JS from WebJars -->
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
