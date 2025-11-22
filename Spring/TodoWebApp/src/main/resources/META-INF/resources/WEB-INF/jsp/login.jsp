@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <div class="container"> 
+            
+    </div>
     <meta charset="UTF-8">
     <title>Login</title>
     <style>
@@ -47,6 +50,8 @@
         Password: <input type="password" name="password">
         <input type="submit" value="Login">
     </form>
+    </div>
+    
 
 </body>
 </html>
