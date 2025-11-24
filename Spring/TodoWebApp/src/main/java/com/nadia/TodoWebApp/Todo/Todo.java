@@ -2,12 +2,16 @@ package com.nadia.TodoWebApp.Todo;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
 
 // DataBase(Mysql)
 //static list of  todos--->(h2,mysql)
 public class Todo {
     private int id;
+    @Size(min = 10, message = "Enter at least 10 characters")
     private String username;
+    @Size(min = 10, message = "Enter at least 10 characters")
     private String desc;
     private LocalDate targetDate;
     private boolean done;

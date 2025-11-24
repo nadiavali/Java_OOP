@@ -16,6 +16,7 @@
     <form:form method="post" modelAttribute="todo" action="/add-todo">
 
         Description : <form:input path="desc" required="required"/>
+        <form:errors path="desc" cssClass="text-warning"/>
         <form:input  type="hidden" path="id" required="required"/>
         <form:input type="hidden" path="done" required="required"/>
         <input type="submit" class="btn btn-success">
