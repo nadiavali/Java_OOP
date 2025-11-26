@@ -13,6 +13,7 @@
     <link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" >
 </head>
 <body class="container mt-4">
+    <%@ include file="common/navigator.jspf" %>
 
     <h1 class="mb-4">Your Todos</h1>
     <form:form method="post" modelAttribute="todo" action="/add-todo">

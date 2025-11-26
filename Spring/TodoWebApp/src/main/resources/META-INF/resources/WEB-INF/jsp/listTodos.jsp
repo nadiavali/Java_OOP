@@ -10,7 +10,7 @@
           href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css" />
 </head>
 <body class="container mt-4">
-
+    <%@ include file="common/navigator.jspf" %>
     <h1 class="mb-4">Your Todos</h1>
 
     <table class="table table-striped table-bordered">
