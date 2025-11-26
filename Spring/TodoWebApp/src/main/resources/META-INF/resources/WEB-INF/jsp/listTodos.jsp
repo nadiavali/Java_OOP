@@ -1,16 +1,8 @@
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>List Todos Page</title>
-
-    <!-- Bootstrap CSS from WebJars -->
-    <link rel="stylesheet"
-          href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css" />
-</head>
 <body class="container mt-4">
     <%@ include file="common/navigator.jspf" %>
+    <%@ include file="common/header.jspf" %>
+    <%@ include file="common/footer.jspf" %>
+    
     <h1 class="mb-4">Your Todos</h1>
 
     <table class="table table-striped table-bordered">
@@ -37,9 +29,5 @@
         </tbody>
     </table>
     <a href="add-todo" class="btn btn-success">Add TODO</a>
-
-    <!-- jQuery + Bootstrap JS from WebJars -->
-    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+
