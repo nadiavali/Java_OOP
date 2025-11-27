@@ -1,5 +1,7 @@
 package com.nadia.TodoWebApp.Security;
 
+import java.util.function.Function;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
@@ -17,10 +19,16 @@ public class SpringSecurityConfiguration {
 
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
-        UserDetails userDetails =
-        User.withDefaultPasswordEncoder().username("Nadia").password("123").roles("USER", "ADMIN").build();
+        Function<String, String> passwordEncoder = input -> passwordEncoder().encode(input);
+        UserDetails userDetails =User.builder().passwordEncoder(passwordEncoder)
+        .username("Nadia").password("123").roles("USER", "ADMIN").build();
 
         return new InMemoryUserDetailsManager(userDetails);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
     
 }
