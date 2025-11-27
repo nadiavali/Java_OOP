@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes("name")
-public class LoginController {
+public class WelcomeController {
 
     @RequestMapping(value="/", method=RequestMethod.GET)
-    public String login(ModelMap model) {
+    public String goToWelcomePAge(ModelMap model) {
         model.put("name", "Nadia");
         return "welcome";
     }
