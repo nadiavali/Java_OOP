@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 
 import jakarta.validation.Valid;
 @Service
@@ -40,4 +43,11 @@ public class TodoService {
         deleteById(todo.getId());
         todos.add(todo);
     }
-}
+
+    private String getLoggedinUsername(ModelMap model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+         return authentication.getName();
+    }
+        
+    }
+

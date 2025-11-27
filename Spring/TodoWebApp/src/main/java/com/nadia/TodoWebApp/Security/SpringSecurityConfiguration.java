@@ -12,6 +12,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 public class SpringSecurityConfiguration {
+   
     // LDAP or Database
     // in memory
     //InMemoryUserDetailsManager
@@ -19,12 +20,21 @@ public class SpringSecurityConfiguration {
 
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
-        Function<String, String> passwordEncoder = input -> passwordEncoder().encode(input);
-        UserDetails userDetails =User.builder().passwordEncoder(passwordEncoder)
-        .username("Nadia").password("123").roles("USER", "ADMIN").build();
+    
+        UserDetails userDetails = createNewUser("Nadia", "123");
+        UserDetails userDetails2 = createNewUser("Admin1", "123");
+        return new InMemoryUserDetailsManager(userDetails, userDetails2);
+}
 
-        return new InMemoryUserDetailsManager(userDetails);
+    private UserDetails createNewUser(String username, String password){
+        Function<String, String> passwordEncoder = 
+        input -> passwordEncoder().encode(input);
+        UserDetails userDetails =User.builder().passwordEncoder(passwordEncoder)
+        .username(username).password(password).roles("USER", "ADMIN").build();
+        ;
+        return userDetails;
     }
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {
