@@ -2,23 +2,33 @@ package com.nadia.TodoWebApp.Todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 
 // DataBase(Mysql)
 //static list of  todos--->(h2,mysql)
+@Entity // directly starts creating table
 public class Todo {
-    private int id;
-    @Size(min = 10, message = "Enter at least 10 characters")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String username;
-    @Size(min = 10, message = "Enter at least 10 characters")
+    //@Size(min = 10, message = "Enter at least 10 characters")
+    @Column(name = "description")  // DB column name, not reserved
     private String desc;
     private LocalDate targetDate;
     private boolean done;
-    
-    public Todo() { } 
 
-    public Todo(int id, String username, String desc, LocalDate targetDate, boolean done) {
+    public Todo() { } 
+    
+
+    
+    public Todo(Integer id, String username, String desc, LocalDate targetDate, boolean done) {
         super();
         this.id = id;
         this.username = username;
@@ -28,12 +38,12 @@ public class Todo {
     }
 
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
