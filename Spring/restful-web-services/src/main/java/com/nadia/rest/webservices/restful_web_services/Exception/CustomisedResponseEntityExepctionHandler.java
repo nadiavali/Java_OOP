@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.nadia.rest.webservices.restful_web_services.User.UserNotFoundException;
+
 @ControllerAdvice
 public class CustomisedResponseEntityExepctionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public final ResponseEntity<Object> handleException(Exception ex, WebRequest request) throws Exception{
+    public final ResponseEntity<Object> handleAllException(Exception ex, WebRequest request) throws Exception{
         ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(),
                                      ex.getMessage(), 
                                     request.getDescription(false));
