@@ -1,13 +1,16 @@
 package com.nadia.rest.webservices.restful_web_services.Filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
-@JsonIgnoreProperties(value = { "field1" })
+//import com.fasterxml.jackson.annotation.JsonIgnore;
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+//@JsonIgnoreProperties(value = { "field1" }) //static filtering
+@JsonFilter("SomeBeanFilter")   
 public class SomeBean {
     private String field1;
 
-    @JsonIgnore
+    //@JsonIgnore
     private String field2;
     private String field3;
 
